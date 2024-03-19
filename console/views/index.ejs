@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <p>
+      <a href="/login">
+        express-session을 통한 로그인. (admin/pass, user1/user1) <BR>
+        login -> loginproc -> home <BR>
+        쿠키에는 connect.id (세션ID)만 저장. 로그인정보는 세션에 저장. <BR>
+      </a>
+    </p>
+    <p>
+      <a href="/testejs">
+        EJS 문법테스트. 
+      </a>
+    </p>
+    <p>
+      <a href="/jwt/login">
+        jwt를 통한 로그인. jwt 검증(signature). 
+      </a>
+    </p>
+
+    <p>
+      <a href="/api">
+        API server. POST JSON. 
+      </a>
+    </p>
+
+
+  </body>
+</html>

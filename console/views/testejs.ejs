@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+
+    var1 = 
+    <%= var1 %>
+    <BR>
+    
+    <%= varlist1 %>
+    <%for (var r in varlist1) {%>
+        <div><%=varlist1[r].name%></div>
+        <div><%=varlist1[r].age%></div>
+    <%}%>
+
+    <ul>
+    <% varlist1.map( (r)=> { %>
+        <li>
+            <%= r.name %> <%= r.age %>
+        </li>
+    <%}) %>
+    </ul>
+
+    <ul>
+        <% varlist1.forEach( function (result) { %>
+            <li><%= result.name %></li>
+        <% }) %>
+    </ul>
+
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<html>
+  <head> 
+    <script src="/api/axios/axios.min.js"></script>
+  </head>
+  <body>
+
+
+    <p>ADD</p>
+    <form>
+      <input type="text" id="A" /> +
+      <input type="text" id="B" />
+      <input type="button" id="Submit" value="Submit" />
+    </form>
+    <input type="text" id="C" />
+
+    <script>
+      window.onload = () => {
+        const btnSubmit = document.getElementById("Submit");
+        btnSubmit.addEventListener("click", function (event) {
+          event.preventDefault();
+          var A = document.getElementById("A").value ;
+          var B = document.getElementById("B").value ;
+          axios.post('/api/add', 
+            {
+                A, B
+            })
+            .then( (res) => {
+                console.log(res) ;
+                document.getElementById("C").value = res.data.RESULT ;
+            })
+            .catch( (err)=> {
+                console.log(err);
+            })
+        });
+      };
+    </script>
+  </body>
+</html>

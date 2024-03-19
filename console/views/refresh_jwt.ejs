@@ -1,0 +1,28 @@
+<html>
+
+<body>
+    <script src="/jwt/axios/axios.min.js"></script>
+    <script>
+        window.onload = ()=>{
+            axios.post('/jwt/refreshtoken', 
+            {
+            })
+            .then( (res) => {
+                console.log(res) ;
+                if ( res.data?.RESULT==1 ) {
+                    alert('refresh token ok') ;
+                    window.location.href = '/jwt/home' ;
+                } else {
+                    alert('refresh token fail') ;
+                    window.location.href = '/jwt/login' ;
+                }
+            })
+            .catch( (err)=> {
+                console.log(err);
+                window.location.href = '/jwt/login' ;
+            })
+        } ;
+    </script>
+</body>
+
+</html>
